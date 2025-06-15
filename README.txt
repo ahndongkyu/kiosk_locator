@@ -43,12 +43,12 @@ git clone https://github.com/your-username/kiosk-locator.git
 
 pip install pandas geopy
 
-3.	현재 위치를 받아오기 위해 get_location.html을 열어 위치를 확인한 후,
+3. 현재 위치를 받아오기 위해 get_location.html을 열어 위치를 확인한 후,
 표시된 lat=...&lng=... 값을 복사하여 user_location.txt 파일로 저장합니다.
 
 예시 (user_location.txt 내용): lat=37.5665&lng=126.9780
 
-4.	메인 프로그램을 실행합니다.
+4. 메인 프로그램을 실행합니다.
 python main.py
 
 📁 파일 구성
