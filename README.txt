@@ -1,27 +1,65 @@
-[프로젝트명]
-무인민원발급기 위치 조회기
+# 🗺️ 무인민원발급기 위치 조회 프로그램
 
-[개요]
-이 프로그램은 사용자의 현재 위치(또는 입력한 주소)를 기준으로 가장 가까운 무인민원발급기 5곳을 거리순으로 출력합니다.
-Tkinter 기반 GUI 환경에서 발급기 정보를 조회하고, 지도 및 상세 정보를 확인할 수 있습니다.
+> 현재 위치를 기준으로 가까운 무인민원발급기 5개를 찾아주는 Python GUI 프로그램입니다.  
+> 공공데이터와 Kakao Maps API를 활용해 사용자에게 실시간 위치 기반 정보를 제공합니다.
 
-[파일 구성]
-1. kiosk_locator_final.py      - 전체 실행 코드
-2. 무인민원발급기_최종.csv     - 발급기 위치 및 정보가 담긴 데이터 파일
-3. user_location.txt          - 웹에서 저장된 사용자 위치 정보 (위도, 경도)
+---
 
-[실행 방법]
-1. Python 3.10 이상 환경에서 실행
-2. CSV 파일 및 user_location.txt가 같은 폴더에 있어야 함
-3. 다음 명령어로 실행
-   > python kiosk_locator_final.py
+## ✅ 주요 기능
 
-[사용된 주요 라이브러리]
-- pandas: CSV 파일 처리
-- geopy: 거리 계산 및 주소 변환
-- tkinter: GUI 구성
-- webbrowser: 지도 연결
+- 📍 **현재 위치 기반 조회**  
+  브라우저를 통해 내 위치를 확인하고, 가장 가까운 무인민원발급기 5곳을 자동으로 계산
 
-[기타 사항]
-- user_location.txt 파일은 브라우저에서 사용자 위치를 받아 생성되며, 프로그램 실행 전 준비되어 있어야 합니다.
-- 인터넷 연결 없이도 CSV 파일만 있다면 실행 가능합니다.
+- 🔎 **지도 보기**  
+  Kakao Map을 통해 선택한 발급기의 위치를 지도에서 확인 가능
+
+- ℹ️ **상세 정보 확인**  
+  각 발급기의 운영 시간, 상세 위치 등 정보를 팝업으로 제공
+
+- 📂 **공공데이터 기반 정제**  
+  행정안전부 무인민원발급기 위치 데이터를 활용하여 정확한 위치 정보 제공
+
+---
+
+## 🛠 사용 기술
+
+- Python 3.x
+- Tkinter (GUI)
+- Pandas (데이터 처리)
+- Geopy (거리 계산)
+- Kakao REST API (주소 → 위경도 변환)
+- Webbrowser (지도 링크 실행)
+
+---
+
+## 🧑‍💻 실행 방법
+
+1. 이 저장소를 클론하거나 압축 파일을 해제합니다.
+
+```bash
+git clone https://github.com/your-username/kiosk-locator.git
+
+2. 필요한 라이브러리를 설치합니다.
+
+pip install pandas geopy
+
+3.	현재 위치를 받아오기 위해 get_location.html을 열어 위치를 확인한 후,
+표시된 lat=...&lng=... 값을 복사하여 user_location.txt 파일로 저장합니다.
+
+예시 (user_location.txt 내용): lat=37.5665&lng=126.9780
+
+4.	메인 프로그램을 실행합니다.
+python main.py
+
+📁 파일 구성
+
+📦 kiosk-locator/
+├── main.py                     # 메인 실행 파일 (Tkinter GUI)
+├── 무인민원발급기_최종.csv        # 위경도 포함된 정제된 공공데이터
+├── get_location.html          # 현재 위치 확인용 HTML
+├── user_location.txt          # 사용자 위치 정보 저장 파일
+└── README.md
+
+📌 데이터 출처
+	•	행정안전부 공공데이터포털
+👉 https://www.data.go.kr
