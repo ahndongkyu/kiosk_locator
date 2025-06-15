@@ -61,5 +61,5 @@ python main.py
 └── README.md
 
 📌 데이터 출처
-	•	행정안전부 공공데이터포털
+행정안전부 공공데이터포털
 👉 https://www.data.go.kr
